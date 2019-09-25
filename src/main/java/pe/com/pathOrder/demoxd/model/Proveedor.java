@@ -1,4 +1,4 @@
-package pe.com.pathOrder.model;
+package pe.com.pathOrder.demoxd.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,26 +10,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 @Entity
-@Table(name ="agentes_aduaneros")
-public class AgenteAduanero {
+@Table(name ="proveedor")
+public class Proveedor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column(name = "nombre", length = 50,nullable = false)
+	@Column(name = "nombre", length = 50, nullable = false)
 	private String nombre;
-	@Column(name = "nickname", length = 50, nullable = true)
-	private String nickname;
-	@Column(name = "password",length = 50, nullable = false)
-	private String password;
-	@Column(name = "permiso")
-	private boolean permisoAdmin;
-	
-	@OneToMany(mappedBy = "agentes_aduaneros")
+	@Column(name = "ruc",length =  20,nullable = false)
+	private String Ruc;
+	@OneToMany(mappedBy = "proveedor")
 	private List<OrdenDespacho> ordenesDespacho;
 	
-	public AgenteAduanero() {
+	public Proveedor() {
 		this.ordenesDespacho = new ArrayList<>();
 	}
 
@@ -49,28 +43,12 @@ public class AgenteAduanero {
 		this.nombre = nombre;
 	}
 
-	public String getNickname() {
-		return nickname;
+	public String getRuc() {
+		return Ruc;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public boolean isPermisoAdmin() {
-		return permisoAdmin;
-	}
-
-	public void setPermisoAdmin(boolean permisoAdmin) {
-		this.permisoAdmin = permisoAdmin;
+	public void setRuc(String ruc) {
+		Ruc = ruc;
 	}
 
 	public List<OrdenDespacho> getOrdenesDespacho() {
@@ -80,4 +58,6 @@ public class AgenteAduanero {
 	public void setOrdenesDespacho(List<OrdenDespacho> ordenesDespacho) {
 		this.ordenesDespacho = ordenesDespacho;
 	}
+	
+	
 }

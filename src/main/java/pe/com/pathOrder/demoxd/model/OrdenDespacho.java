@@ -1,4 +1,4 @@
-package pe.com.pathOrder.model;
+package pe.com.pathOrder.demoxd.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
-@Table(name = "Orden_de_Despacho")
+@Table(name = "OrdenDespacho")
 public class OrdenDespacho {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,24 +37,35 @@ public class OrdenDespacho {
 	@ManyToOne
 	@JoinColumn(name = "canal_id")
 	private Canal canal;
+	
 	@ManyToOne
 	@JoinColumn(name = "tipoDespacho_id")
 	private TipoDespacho tipoDespacho;
+	
 	@ManyToOne
 	@JoinColumn(name = "proveedor_id")
 	private Proveedor proveedor;
+	
 	@ManyToOne
 	@JoinColumn(name = "agenteAduanero_id")
 	private AgenteAduanero agenteAduanero;
 	
-	@OneToMany(mappedBy = "Orden_de_Despacho")
+	@OneToMany(mappedBy = "ordenDespacho")
 	private List<Bulto> bultos;
 	
-	@OneToMany(mappedBy = "Orden_de_Despacho")
+	@OneToMany(mappedBy = "ordenDespacho")
 	private List<Factura> facturas;
 	
 	@Column(name = "observacion", length = 200, nullable = true)
 	private String observacion;
+	
+	@OneToOne
+	@JoinColumn(name ="FK_dam", updatable = false,nullable = false)
+	private Dam dam;
+	
+	@OneToOne
+	@JoinColumn(name ="FK_fecha", updatable = false,nullable = false)
+	private Fecha fecha;
 	
 	public OrdenDespacho() {
 		this.bultos = new ArrayList<>();

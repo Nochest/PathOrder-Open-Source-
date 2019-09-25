@@ -1,4 +1,4 @@
-package pe.com.pathOrder.model;
+package pe.com.pathOrder.demoxd.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

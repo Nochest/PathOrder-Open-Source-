@@ -1,4 +1,4 @@
-package pe.com.pathOrder.model;
+package pe.com.pathOrder.demoxd.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ public class Mercaderia {
 	@Column(name = "tipo", length = 20, nullable = false)
 	private String tipo;
 	
-	@ManyToMany(mappedBy = "mercaderia")
+	@ManyToMany(mappedBy = "mercaderias")
 	private List<Factura> facturas;
 	
 	public Mercaderia() {

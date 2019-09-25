@@ -1,12 +1,11 @@
-package pe.com.pathOrder.model;
+package pe.com.pathOrder.demoxd.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -21,8 +20,7 @@ public class Dam {
 	@Column(name ="CIF", precision = 2, nullable = false)
 	private float Cif;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@MapsId
+	@OneToOne(mappedBy = "dam", cascade =  CascadeType.ALL)
 	OrdenDespacho ordenDespacho;
 
 	public Integer getId() {

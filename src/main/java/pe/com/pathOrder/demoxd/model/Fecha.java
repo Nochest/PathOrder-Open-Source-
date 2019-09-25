@@ -1,14 +1,13 @@
-package pe.com.pathOrder.model;
+package pe.com.pathOrder.demoxd.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -39,8 +38,7 @@ public class Fecha {
 	@Column(name = "fechaKMMP",nullable = false)
 	private Date KMMP;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@MapsId
+	@OneToOne(mappedBy = "fecha", cascade =  CascadeType.ALL)
 	OrdenDespacho ordenDespacho;
 
 	public Integer getId() {
