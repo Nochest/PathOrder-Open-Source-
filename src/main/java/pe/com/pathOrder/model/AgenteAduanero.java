@@ -10,18 +10,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 @Entity
-@Table(name="tipo_despacho")
-public class TipoDespacho {
+@Table(name ="agentes_aduaneros")
+public class AgenteAduanero {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column(name = "nombre", length = 50, nullable = false)
+	@Column(name = "nombre", length = 50,nullable = false)
 	private String nombre;
-	@OneToMany(mappedBy = "tipo_despacho")
+	@Column(name = "nickname", length = 50, nullable = true)
+	private String nickname;
+	@Column(name = "password",length = 50, nullable = false)
+	private String password;
+	@Column(name = "permiso")
+	private boolean permisoAdmin;
+	
+	@OneToMany(mappedBy = "agentes_aduaneros")
 	private List<OrdenDespacho> ordenesDespacho;
 	
-	public TipoDespacho() {
+	public AgenteAduanero() {
 		this.ordenesDespacho = new ArrayList<>();
 	}
 
@@ -41,6 +49,30 @@ public class TipoDespacho {
 		this.nombre = nombre;
 	}
 
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public boolean isPermisoAdmin() {
+		return permisoAdmin;
+	}
+
+	public void setPermisoAdmin(boolean permisoAdmin) {
+		this.permisoAdmin = permisoAdmin;
+	}
+
 	public List<OrdenDespacho> getOrdenesDespacho() {
 		return ordenesDespacho;
 	}
@@ -48,6 +80,4 @@ public class TipoDespacho {
 	public void setOrdenesDespacho(List<OrdenDespacho> ordenesDespacho) {
 		this.ordenesDespacho = ordenesDespacho;
 	}
-	
-	
 }
