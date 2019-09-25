@@ -37,7 +37,7 @@ public class Dam {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
+	}	
 
 	public float getCif() {
 		return Cif;
