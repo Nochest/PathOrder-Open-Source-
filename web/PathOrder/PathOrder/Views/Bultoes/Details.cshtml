@@ -1,0 +1,34 @@
+﻿@model PathOrder.Models.Bulto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bulto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Peso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Peso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrdenDespacho.Prioridad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrdenDespacho.Prioridad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdBulto }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
