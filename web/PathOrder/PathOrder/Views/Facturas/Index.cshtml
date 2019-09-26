@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PathOrder.Models.Factura>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumFactura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unidades)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrdenDespacho.Prioridad)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumFactura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Unidades)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrdenDespacho.Prioridad)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdFactura }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdFactura }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdFactura })
+        </td>
+    </tr>
+}
+
+</table>
