@@ -15,7 +15,7 @@
 </head>
 <body>
 	<header th:fragment="header">
-		<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-info">
 			<a class="navbar-brand" th:href="@{/}"><i class="fas fa-users"></i> PO</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
@@ -31,6 +31,7 @@
 					
 					<li class="nav-item active">
 						<a class="nav-link" th:href="@{/carrera/listado}">
+							<i class="fas fa-cloud-download-alt"></i> Equipo  
 							<i class="fas fa-cloud-download-alt"></i> Ordenes de Despacho
 						</a>
 					</li>
@@ -46,7 +47,7 @@
 							<a class="dropdown-item" th:href="@{/department}"><i class="fas fa-warehouse"></i> Department</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link disabled" th:href="@{/}"
-						tabindex="-1" aria-disabled="true"><i class="fas fa-user-tie"></i> Employee</a></li>
+						tabindex="-1" aria-disabled="true"><i class="fas fa-user-tie"></i> Employee </a></li>
 				</ul>
 			</div>
 		</nav>
