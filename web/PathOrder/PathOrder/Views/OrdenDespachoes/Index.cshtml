@@ -1,0 +1,112 @@
+﻿@model IEnumerable<PathOrder.Models.OrdenDespacho>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Orden de Despacho</h2>
+
+<p>
+    @Html.ActionLink("Crear nueva Orden de Despacho", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroOrden)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prioridad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AWB_BL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AWB_BLOrigen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Origen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadSeries)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadBultos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgenteAduanero.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Canal.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DAM.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha.IdFecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Proveedor.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDespacho.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.NumeroOrden)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.Prioridad)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.AWB_BL)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.AWB_BLOrigen)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.Origen)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.CantidadSeries)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.CantidadBultos)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.Observacion)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.AgenteAduanero.Nombre)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.Canal.Nombre)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.DAM.Descripcion)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.Fecha.IdFecha)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.Proveedor.Nombre)
+            </td>
+            <td align="left">
+                @Html.DisplayFor(modelItem => item.TipoDespacho.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdOrdenDespacho }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdOrdenDespacho }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdOrdenDespacho })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,66 @@
+﻿@model PathOrder.Models.Fecha
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Fecha</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaEnumeracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaEnumeracion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaRetiro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaRetiro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCancelacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCancelacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaLevante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaLevante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaPrecosteo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaPrecosteo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KMMP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KMMP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdFecha }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
