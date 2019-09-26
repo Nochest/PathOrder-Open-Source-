@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import pe.com.pathOrder.demoxd.model.Canal;
 
-public interface CanalRepository extends JpaRepository<Canal, Long>{
+public interface CanalRepository extends JpaRepository<Canal, Integer>{
 
 }
